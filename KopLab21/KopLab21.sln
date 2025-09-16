@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KopLab21", "KopLab21\KopLab21.csproj", "{57413B05-A662-4DB2-AE12-7E550345F5B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57413B05-A662-4DB2-AE12-7E550345F5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57413B05-A662-4DB2-AE12-7E550345F5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57413B05-A662-4DB2-AE12-7E550345F5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57413B05-A662-4DB2-AE12-7E550345F5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1155A9CD-5D3E-4185-9FF0-B44D8603038B}
+	EndGlobalSection
+EndGlobal
