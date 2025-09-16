@@ -1,6 +1,6 @@
 ﻿namespace KopLab21
 {
-    partial class ListOfValue
+    partial class InputInt
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,29 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox = new ListBox();
+            checkBox1 = new CheckBox();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // listBox
+            // checkBox1
             // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(3, 3);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(150, 104);
-            listBox.TabIndex = 0;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(9, 18);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(55, 24);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "null";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
-            // ListOfValue
+            // textBox1
+            // 
+            textBox1.Location = new Point(9, 48);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(222, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // InputInt
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listBox);
-            Name = "ListOfValue";
-            Size = new Size(157, 111);
+            Controls.Add(textBox1);
+            Controls.Add(checkBox1);
+            Name = "InputInt";
+            Size = new Size(234, 85);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBox;
+        private CheckBox checkBox1;
+        private TextBox textBox1;
     }
 }
