@@ -24,10 +24,14 @@ namespace KopLab21
                 ValueChanged?.Invoke(this, EventArgs.Empty);
             };
 
-            // Событие для TextBox: изменение текста
-            textBox1.TextChanged += (s, e) =>
+            // Событие для TextBox: реагируем только на Enter
+            textBox1.KeyDown += (s, e) =>
             {
-                ValueChanged?.Invoke(this, EventArgs.Empty);
+                if (e.KeyCode == Keys.Enter)
+                {
+                    e.SuppressKeyPress = true; // предотвращаем "дзынькание" Enter
+                    ValueChanged?.Invoke(this, EventArgs.Empty);
+                }
             };
         }
 
