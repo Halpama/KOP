@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
+            listBox = new ListBox();
             SuspendLayout();
             // 
-            // listBox1
+            // listBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(3, 3);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 104);
-            listBox1.TabIndex = 0;
+            listBox.FormattingEnabled = true;
+            listBox.Location = new Point(3, 3);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(150, 104);
+            listBox.TabIndex = 0;
             // 
             // ListOfValue
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listBox1);
+            Controls.Add(listBox);
             Name = "ListOfValue";
             Size = new Size(157, 111);
             ResumeLayout(false);
@@ -51,6 +51,6 @@
 
         #endregion
 
-        private ListBox listBox1;
+        private ListBox listBox;
     }
 }

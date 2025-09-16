@@ -12,42 +12,46 @@ namespace KopLab21
 {
     public partial class ListOfValue : UserControl
     {
-        private ListBox listBox;
-
         public ListOfValue()
         {
-            listBox = new ListBox();
-            listBox.Dock = DockStyle.Fill;
-            listBox.SelectedIndexChanged += (s, e) =>
-                OnSelectedItemChanged?.Invoke(this, EventArgs.Empty);
-
-            Controls.Add(listBox);
             InitializeComponent();
+
+            listBox.SelectedIndexChanged += (s, e) =>
+            {
+                ValueChanged?.Invoke(this, EventArgs.Empty);
+            };
         }
 
-        public void FillList(List<string> items)
+        public void FillItems(List<string> values)
         {
-            if (items == null) return;
-
             listBox.Items.Clear();
 
-            foreach (var item in items.Distinct())
+            var uniqueValues = values
+                .Where(v => !string.IsNullOrWhiteSpace(v))
+                .Distinct()
+                .ToList();
+
+            listBox.Items.AddRange(uniqueValues.ToArray());
+        }
+
+        public void ClearItems()
+        {
+            listBox.Items.Clear();
+        }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string SelectedValue
+        {
+            get => listBox.SelectedItem?.ToString() ?? string.Empty;
+            set
             {
-                if (!string.IsNullOrWhiteSpace(item))
-                    listBox.Items.Add(item);
+                if (listBox.Items.Contains(value))
+                    listBox.SelectedItem = value;
+                else
+                    listBox.ClearSelected();
             }
         }
 
-        public void Clear()
-        {
-            listBox.Items.Clear();
-        }
-
-        public int Count => listBox.Items.Count;
-        public int SelectedIndex => listBox.SelectedIndex;
-        public string SelectedItem => listBox.SelectedItem?.ToString();
-
-        // События
-        public event EventHandler OnSelectedItemChanged;
+        public event EventHandler ValueChanged;
     }
 }

@@ -1,5 +1,4 @@
 using KopLab21;
-
 namespace ImplApp
 {
     public partial class Form1 : Form
@@ -9,7 +8,7 @@ namespace ImplApp
         {
             InitializeComponent();
 
-            listOfValue.FillList(new List<string> { "Значение1", "Значение2", "Значение3" });
+            listOfValue.FillItems(new List<string> { "Значение1", "Значение2", "Значение3" });
 
         }
     }
