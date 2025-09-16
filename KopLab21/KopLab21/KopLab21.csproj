@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>ListOfValues</Title>
-    <Version>$(VersionPrefix)1.0.2</Version>
+    <Version>$(VersionPrefix)1.2.0</Version>
   </PropertyGroup>
 
 </Project>

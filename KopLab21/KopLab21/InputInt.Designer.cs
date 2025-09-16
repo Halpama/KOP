@@ -28,10 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            checkBox1 = new CheckBox();
+            textBox1 = new TextBox();
+            SuspendLayout();
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(9, 18);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(55, 24);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "null";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(9, 48);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(222, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // InputInt
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(textBox1);
+            Controls.Add(checkBox1);
+            Name = "InputInt";
+            Size = new Size(234, 85);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private CheckBox checkBox1;
+        private TextBox textBox1;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             listOfValue = new KopLab21.ListOfValue();
+            inputInt1 = new KopLab21.InputInt();
             SuspendLayout();
             // 
             // listOfValue
@@ -38,11 +39,19 @@
             listOfValue.Size = new Size(196, 139);
             listOfValue.TabIndex = 0;
             // 
+            // inputInt1
+            // 
+            inputInt1.Location = new Point(12, 193);
+            inputInt1.Name = "inputInt1";
+            inputInt1.Size = new Size(292, 106);
+            inputInt1.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(inputInt1);
             Controls.Add(listOfValue);
             Name = "Form1";
             Text = "Form1";
@@ -52,5 +61,6 @@
         #endregion
 
         private KopLab21.ListOfValue listOfValue;
+        private KopLab21.InputInt inputInt1;
     }
 }
