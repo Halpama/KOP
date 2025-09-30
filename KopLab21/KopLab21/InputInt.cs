@@ -24,19 +24,15 @@ namespace KopLab21
                 ValueChanged?.Invoke(this, EventArgs.Empty);
             };
 
-            // Событие для TextBox: реагируем только на Enter
-            textBox1.KeyDown += (s, e) =>
+            // Событие для TextBox
+            textBox1.TextChanged += (s, e) =>
             {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    e.SuppressKeyPress = true; // предотвращаем "дзынькание" Enter
-                    ValueChanged?.Invoke(this, EventArgs.Empty);
-                }
+                ValueChanged?.Invoke(this, EventArgs.Empty);
             };
         }
 
         // Свойство для установки/получения значения
-        private int? _value;
+        
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int? Value
         {
