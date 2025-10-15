@@ -30,6 +30,7 @@
         {
             listOfValue = new KopLab21.ListOfValue();
             inputInt1 = new KopLab21.InputInt();
+            objectListControl1 = new KopLab21.ObjectListControl();
             SuspendLayout();
             // 
             // listOfValue
@@ -46,11 +47,21 @@
             inputInt1.Size = new Size(292, 106);
             inputInt1.TabIndex = 1;
             // 
+            // objectListControl1
+            // 
+            objectListControl1.Location = new Point(300, 27);
+            objectListControl1.Margin = new Padding(2, 2, 2, 2);
+            objectListControl1.Name = "objectListControl1";
+            objectListControl1.SelectedValue = "";
+            objectListControl1.Size = new Size(630, 392);
+            objectListControl1.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(944, 502);
+            Controls.Add(objectListControl1);
             Controls.Add(inputInt1);
             Controls.Add(listOfValue);
             Name = "Form1";
@@ -62,5 +73,6 @@
 
         private KopLab21.ListOfValue listOfValue;
         private KopLab21.InputInt inputInt1;
+        private KopLab21.ObjectListControl objectListControl1;
     }
 }
