@@ -30,6 +30,7 @@
         {
             listOfValue = new KopLab21.ListOfValue();
             inputInt1 = new KopLab21.InputInt();
+            controlInputRangeDate1 = new ControlsLibraryNet90.Input.ControlInputRangeDate();
             SuspendLayout();
             // 
             // listOfValue
@@ -46,11 +47,22 @@
             inputInt1.Size = new Size(292, 106);
             inputInt1.TabIndex = 1;
             // 
+            // controlInputRangeDate1
+            // 
+            controlInputRangeDate1.Location = new Point(242, 146);
+            controlInputRangeDate1.Margin = new Padding(4, 5, 4, 5);
+            controlInputRangeDate1.MaxDate = null;
+            controlInputRangeDate1.MinDate = null;
+            controlInputRangeDate1.Name = "controlInputRangeDate1";
+            controlInputRangeDate1.Size = new Size(500, 39);
+            controlInputRangeDate1.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(controlInputRangeDate1);
             Controls.Add(inputInt1);
             Controls.Add(listOfValue);
             Name = "Form1";
@@ -62,5 +74,6 @@
 
         private KopLab21.ListOfValue listOfValue;
         private KopLab21.InputInt inputInt1;
+        private ControlsLibraryNet90.Input.ControlInputRangeDate controlInputRangeDate1;
     }
 }

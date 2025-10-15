@@ -1,6 +1,6 @@
 ﻿namespace Components
 {
-    partial class ListOfValue
+    partial class ObjectListControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -34,18 +34,18 @@
             // listBox
             // 
             listBox.FormattingEnabled = true;
-            listBox.Location = new Point(3, 3);
+            listBox.Location = new Point(6, 3);
             listBox.Name = "listBox";
-            listBox.Size = new Size(150, 104);
+            listBox.Size = new Size(813, 484);
             listBox.TabIndex = 0;
             // 
-            // ListOfValue
+            // ObjectListControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(listBox);
-            Name = "ListOfValue";
-            Size = new Size(157, 111);
+            Name = "ObjectListControl";
+            Size = new Size(819, 502);
             ResumeLayout(false);
         }
 

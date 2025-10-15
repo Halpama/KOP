@@ -1,4 +1,4 @@
-﻿namespace KopLab21
+﻿namespace Components
 {
     partial class InputInt
     {

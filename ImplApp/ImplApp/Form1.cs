@@ -8,7 +8,7 @@ namespace ImplApp
         {
             InitializeComponent();
 
-            listOfValue.FillItems(new List<string> { "Значение1", "Значение2", "Значение3" });
+            listOfValue.FillItems(new List<string> { "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ1", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ2", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ3" });
             inputInt1.ValueChanged += (s, e) =>
             {
                 try
@@ -18,7 +18,7 @@ namespace ImplApp
                 }
                 catch (InvalidInputException ex)
                 {
-                    MessageBox.Show("Ошибка: " + ex.Message);
+                    MessageBox.Show("пїЅпїЅпїЅпїЅпїЅпїЅ: " + ex.Message);
                 }
             };
 

@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ComponentContract" Version="1.0.0" />
+    <PackageReference Include="ControlsLibraryNet90" Version="1.0.0" />
     <PackageReference Include="KopLab21" Version="1.2.4" />
+    <PackageReference Include="WinFormsControlsLibrary" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
