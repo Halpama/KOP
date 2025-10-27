@@ -1,4 +1,4 @@
-﻿namespace KopLab21
+﻿namespace ComponentSelectionList
 {
     partial class ListOfValue
     {

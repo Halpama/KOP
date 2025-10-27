@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KopLab21
+namespace ComponentSelectionList
 {
     public partial class ListOfValue : UserControl
     {
