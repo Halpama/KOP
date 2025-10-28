@@ -140,6 +140,7 @@ namespace ImplApp
         {
             directoriesToolStripMenuItem.Enabled = directoriesToolStripMenuItem.DropDownItems.Count > 0;
             reportsToolStripMenuItem.Enabled = reportsToolStripMenuItem.DropDownItems.Count > 0;
+
         }
 
         private void OpenComponentInTab(string componentId)

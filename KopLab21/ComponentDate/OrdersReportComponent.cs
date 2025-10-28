@@ -8,7 +8,7 @@ using ComponentOrdersReport;
 
 namespace ComponentDate;
 
-internal class OrdersReportComponent : IComponentContract
+public class OrdersReportComponent : IComponentContract
 {
     public string Id => "OrdersReceiptDateReport";
     public string Title => "Отчет по дате получения заказа";
