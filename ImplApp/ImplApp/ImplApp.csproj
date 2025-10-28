@@ -10,6 +10,29 @@
 
   <ItemGroup>
     <PackageReference Include="KopLab21" Version="1.2.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contract\Contract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ComponentCities">
+      <HintPath>..\..\ComponentsDll\ComponentCities.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentOrdersList">
+      <HintPath>..\..\ComponentsDll\ComponentOrdersList.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentOrdersReport">
+      <HintPath>..\..\ComponentsDll\ComponentOrdersReport.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

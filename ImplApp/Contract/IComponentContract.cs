@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Contract
+﻿namespace Contract
 {
     public interface IComponentContract
     {
@@ -11,6 +6,5 @@ namespace Contract
         string Title { get; }
         string Category { get; }
         UserControl GetControl();
-
     }
 }
