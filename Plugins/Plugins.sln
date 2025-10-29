@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginOrderProductsWithChartBarPdf", "Plugins\PluginOrderProductsWithChartBarPdf.csproj", "{13B28B6D-86D9-4E4C-B117-0DD166754C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginSimpleTablePdf", "SimpleTablePdfReport\PluginSimpleTablePdf.csproj", "{87262A71-E12D-4E9F-8B36-E1A8D59D5327}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13B28B6D-86D9-4E4C-B117-0DD166754C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B28B6D-86D9-4E4C-B117-0DD166754C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B28B6D-86D9-4E4C-B117-0DD166754C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B28B6D-86D9-4E4C-B117-0DD166754C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C39769C-8A98-4079-A958-4B4C15596889}
+	EndGlobalSection
+EndGlobal

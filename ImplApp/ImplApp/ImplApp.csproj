@@ -27,6 +27,12 @@
     <Reference Include="ComponentOrdersReport">
       <HintPath>..\..\ComponentsDll\ComponentOrdersReport.dll</HintPath>
     </Reference>
+    <Reference Include="LineChartReportPlugin">
+      <HintPath>..\..\ComponentsDll\LineChartReportPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginSimpleTablePdf">
+      <HintPath>..\..\ComponentsDll\PluginSimpleTablePdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
