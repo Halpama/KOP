@@ -134,7 +134,25 @@ namespace ImplApp
                 else
                     directoriesToolStripMenuItem.DropDownItems.Add(menuItem);
             }
+
+            var extensionsItem = new ToolStripMenuItem("Расширения");
+            extensionsItem.Click += (s, e) =>
+            {
+                string pluginsPath = @"C:\\KOP\\PluginsDll";
+
+                if (!Directory.Exists(pluginsPath))
+                {
+                    MessageBox.Show($"Папка с расширениями не найдена:\n{pluginsPath}");
+                    return;
+                }
+
+                new ExtensionsForm(pluginsPath).ShowDialog();
+            };
+            reportsToolStripMenuItem.DropDownItems.Add(extensionsItem);
+
+
         }
+
 
         private void ApplyLicenseRestrictions()
         {

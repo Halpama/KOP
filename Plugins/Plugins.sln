@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginOrderProductsWithChar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginSimpleTablePdf", "SimpleTablePdfReport\PluginSimpleTablePdf.csproj", "{87262A71-E12D-4E9F-8B36-E1A8D59D5327}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineChartReportPlugins", "LineChartReportPlugin\LineChartReportPlugins.csproj", "{38EA5EE7-A193-4ECB-BD41-10526DD926C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87262A71-E12D-4E9F-8B36-E1A8D59D5327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EA5EE7-A193-4ECB-BD41-10526DD926C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EA5EE7-A193-4ECB-BD41-10526DD926C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EA5EE7-A193-4ECB-BD41-10526DD926C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EA5EE7-A193-4ECB-BD41-10526DD926C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

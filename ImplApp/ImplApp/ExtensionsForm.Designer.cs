@@ -1,6 +1,6 @@
 ﻿namespace ImplApp
 {
-    partial class ExtensionsFormVariant
+    partial class ExtensionsForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.ComboBox comboBoxPdf;

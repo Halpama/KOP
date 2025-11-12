@@ -28,6 +28,5 @@ namespace Contract.Plugins
             string chartTitle,
             List<(int Parameter, double Value)> series
         );
-        Task CreateDocumentAsync(string fileName, string v1, string v2, List<(string Series, string Category, double Value)> data);
     }
 }

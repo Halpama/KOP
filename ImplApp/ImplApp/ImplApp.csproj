@@ -30,6 +30,9 @@
     <Reference Include="LineChartReportPlugin">
       <HintPath>..\..\ComponentsDll\LineChartReportPlugin.dll</HintPath>
     </Reference>
+    <Reference Include="PluginOrderProductsWithChartBarPdf">
+      <HintPath>..\..\PluginsDll\PluginOrderProductsWithChartBarPdf.dll</HintPath>
+    </Reference>
     <Reference Include="PluginSimpleTablePdf">
       <HintPath>..\..\ComponentsDll\PluginSimpleTablePdf.dll</HintPath>
     </Reference>

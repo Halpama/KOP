@@ -15,7 +15,7 @@ namespace PluginSimpleTablePdf
     public class SimpleTablePdfReport : IReportDocumentWithContextTablesContract
     {
         public string Id => "SimpleTablePdfReport21";
-        public string Title => "Отчет по движению заказов (вариант 21)";
+        public string Title => "Отчет по движению заказов";
         public string Category => "Reports";
 
         // Формат документа

@@ -5,19 +5,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace ImplApp
 {
-    public partial class ExtensionsFormVariant : Form
+    public partial class ExtensionsForm : Form
     {
         private readonly string _pluginsFolder;
 
         private readonly List<IReportDocumentWithContextTablesContract> _pdfPlugins = new();
-        private readonly List<IReportDocumentWithChartHistogramContract> _wordPlugins = new();
+        private readonly List<IReportDocumentWithChartLineContract> _wordPlugins = new();
 
-        public ExtensionsFormVariant(string pluginsFolder)
+        public ExtensionsForm(string pluginsFolder)
         {
             _pluginsFolder = pluginsFolder;
             InitializeComponent();
@@ -48,6 +47,7 @@ namespace ImplApp
                         if (type.IsInterface || type.IsAbstract)
                             continue;
 
+                        // === PDF-плагины (таблицы) ===
                         if (typeof(IReportDocumentWithContextTablesContract).IsAssignableFrom(type))
                         {
                             var instance = (IReportDocumentWithContextTablesContract)Activator.CreateInstance(type);
@@ -56,9 +56,10 @@ namespace ImplApp
                             continue;
                         }
 
-                        if (typeof(IReportDocumentWithChartHistogramContract).IsAssignableFrom(type))
+                        // === Word-плагины (диаграммы) ===
+                        if (typeof(IReportDocumentWithChartLineContract).IsAssignableFrom(type))
                         {
-                            var instance = (IReportDocumentWithChartHistogramContract)Activator.CreateInstance(type);
+                            var instance = (IReportDocumentWithChartLineContract)Activator.CreateInstance(type);
                             _wordPlugins.Add(instance);
                             comboBoxWord.Items.Add(instance.DocumentFormat);
                             continue;
@@ -93,33 +94,37 @@ namespace ImplApp
             }
 
             // Заголовок таблицы — этапы движения
-            string[,] table = new string[1, 6];
+            string[,] headerRow = new string[1, 6];
             for (int i = 0; i < 6; i++)
-                table[0, i] = $"Этап {i + 1}";
+                headerRow[0, i] = $"Этап {i + 1}";
+
+            result.Add(headerRow);
 
             var lines = File.ReadAllLines(ordersPath);
             foreach (var line in lines)
             {
                 var parts = line.Split('|');
-                if (parts.Length >= 4)
-                {
-                    // 3-я позиция — отметки движения (например: «принят, собран, отправлен»)
-                    var stages = parts[2].Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-                    string[,] row = new string[1, 6];
-                    for (int i = 0; i < 6; i++)
-                        row[0, i] = i < stages.Length ? stages[i] : "";
-                    result.Add(row);
-                }
+                if (parts.Length < 3) continue;
+
+                // 3-й элемент (parts[2]) — строка с отметками движения заказа
+                var stages = parts[2]
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+                string[,] row = new string[1, 6];
+                for (int i = 0; i < 6; i++)
+                    row[0, i] = i < stages.Length ? stages[i] : "";
+
+                result.Add(row);
             }
 
             return result;
         }
 
         // === Подготовка данных для линейной диаграммы в Word ===
-        private List<(string Series, string Category, double Value)> PrepareChartData()
+        private Dictionary<string, List<(int Parameter, double Value)>> PrepareChartDataForWord()
         {
             string ordersPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "orders.txt");
-            var result = new List<(string, string, double)>();
+            var result = new Dictionary<string, List<(int Parameter, double Value)>>();
 
             if (!File.Exists(ordersPath))
             {
@@ -127,7 +132,8 @@ namespace ImplApp
                 return result;
             }
 
-            var data = new Dictionary<string, Dictionary<DateTime, int>>();
+            // city -> (date -> count)
+            var data = new Dictionary<string, Dictionary<DateTime, int>>(StringComparer.OrdinalIgnoreCase);
 
             foreach (var line in File.ReadAllLines(ordersPath))
             {
@@ -147,13 +153,16 @@ namespace ImplApp
                 data[city][date]++;
             }
 
-            // Преобразуем в список (серия, категория, значение)
+
+            // Преобразуем в формат словаря для диаграммы
             foreach (var city in data)
             {
-                foreach (var kv in city.Value.OrderBy(x => x.Key))
-                {
-                    result.Add((city.Key, kv.Key.ToShortDateString(), kv.Value));
-                }
+                var list = city.Value
+                    .OrderBy(x => x.Key)
+                    .Select((kv, index) => (Parameter: index + 1, Value: (double)kv.Value))
+                    .ToList();
+
+                result[city.Key] = list;
             }
 
             return result;
@@ -171,7 +180,7 @@ namespace ImplApp
             var plugin = _pdfPlugins[comboBoxPdf.SelectedIndex];
             var tables = PrepareOrdersTable();
 
-            if (tables.Count == 0)
+            if (tables.Count <= 1)
             {
                 MessageBox.Show("Нет данных для отчёта.");
                 return;
@@ -207,9 +216,9 @@ namespace ImplApp
             }
 
             var plugin = _wordPlugins[comboBoxWord.SelectedIndex];
-            var data = PrepareChartData();
+            var series = PrepareChartDataForWord();
 
-            if (data.Count == 0)
+            if (series.Count == 0)
             {
                 MessageBox.Show("Нет данных для построения диаграммы.");
                 return;
@@ -228,7 +237,7 @@ namespace ImplApp
                             sfd.FileName,
                             "Отчёт по заказам",
                             "Количество заказов по городам и датам",
-                            data
+                            series
                         );
                         MessageBox.Show("Word отчёт с линейной диаграммой успешно создан!");
                     }
